@@ -8,6 +8,31 @@
 		document = window.document;
 
 	/**
+	 * Get an AJAX promise.
+	 *
+	 * Sets a random delay for testing purposes to simulate network latency.
+	 *
+	 * @param {string} url
+	 *
+	 * @return {$.Deferred}
+	 */
+	function get_data( url ) {
+		var deferred = $.Deferred();
+
+		var options = {};
+		options.type = 'get';
+		options.dataType = 'json';
+		options.contentType = 'application/json; charset=utf-8';
+		options.url = url;
+
+		setTimeout( function() {
+			deferred.resolveWith( $.ajax( options ) );
+		}, Math.floor( 400 + Math.random() * 2000 ) );
+
+		return deferred.promise();
+	}
+
+	/**
 	 * Default collection for listings
 	 */
 	var ListingCollection = window.Transfers.ListingCollection = Backbone.Collection.extend(
@@ -56,14 +81,34 @@
 					return;
 				}
 
-				options = options || {};
-				options.type = 'get';
-				options.dataType = 'json';
-				options.contentType = 'application/json; charset=utf-8';
+				var sources = [
+					Transfers.api_base + '/data/1.json',
+					Transfers.api_base + '/data/2.json',
+					Transfers.api_base + '/data/3.json',
+					Transfers.api_base + '/data/4.json',
+					Transfers.api_base + '/data/5.json',
+					Transfers.api_base + '/data/6.json',
+					Transfers.api_base + '/data/7.json',
+					Transfers.api_base + '/data/8.json',
+					Transfers.api_base + '/data/9.json'
+				];
+
+				//options = options || {};
+				//options.type = 'get';
+				//options.dataType = 'json';
+				//options.contentType = 'application/json; charset=utf-8';
+
+				var promises = [];
+				_.each( sources, function( url ) {
+					promises.push( get_data( url ) );
+				} );
+
+				return $.when( promises ).then( options.success );
+
 				//options.url = Transfers.api_base + 'group/' + Transfers.application.condition();
 				//options.data = Transfers.application.queryData();
 
-				return $.ajax( options );
+				//return $.ajax( options );
 			}
 		}
 	);
