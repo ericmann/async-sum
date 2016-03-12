@@ -26,7 +26,7 @@
 		options.url = url;
 
 		setTimeout( function() {
-			deferred.resolveWith( $.ajax( options ) );
+			deferred.resolveWith( $.ajax( options ).done );
 		}, Math.floor( 400 + Math.random() * 2000 ) );
 
 		return deferred.promise();
@@ -100,10 +100,27 @@
 
 				var promises = [];
 				_.each( sources, function( url ) {
-					promises.push( get_data( url ) );
+					var options = {
+						type: 'get',
+						dataType: 'json',
+						contentType: 'application/json; charset=utf-8',
+						url: url,
+						success: function( data ) {
+							// Add the data objects to the collection
+							if ( data.success ) {
+								_.each( data.data.items, function( dataItem ) {
+									SELF.add( new window.Transfers.Listing( dataItem ) );
+								} );
+							}
+						}
+					};
+
+					promises.push( $.ajax( options ) );
 				} );
 
-				return $.when( promises ).then( options.success );
+				return $.when.apply( null, promises ).then( function() {
+					options.success();
+				} );
 
 				//options.url = Transfers.api_base + 'group/' + Transfers.application.condition();
 				//options.data = Transfers.application.queryData();
