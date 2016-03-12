@@ -5,6 +5,7 @@
     <title>Transfer Program Multi-Sync</title>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
     <style type="text/css">
         .ui-progressbar {
             position: relative;
@@ -23,7 +24,22 @@
         <div class="progress-label">Loading...</div>
     </div>
 
-    <div id="listing_container"></div>
+    <div id="listing_container" class="cards"></div>
+
+    <!-- Dynamic templates need to live before any scripts -->
+    <script type="text/template" id="tmpl-card">
+        <div class="card">
+            <div class="card-image">
+                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
+            </div>
+            <div class="card-header">
+                <%= name %>
+            </div>
+            <div class="card-copy">
+                <p><%= description %></p>
+            </div>
+        </div>
+    </script>
 
     <!-- All script includes would be done in PHP using wp_enqueue_script() -->
     <script src="//code.jquery.com/jquery-1.12.1.min.js"></script>

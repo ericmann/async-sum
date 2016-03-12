@@ -109,7 +109,11 @@
 							// Add the data objects to the collection
 							if ( data.success ) {
 								_.each( data.data.items, function( dataItem ) {
-									SELF.add( new window.Transfers.Listing( dataItem ) );
+									// Build out the data model
+									var listing = new window.Transfers.Listing( dataItem );
+
+									// Add a model to the collection
+									SELF.add( listing );
 								} );
 							}
 						}
@@ -121,11 +125,6 @@
 				return $.when.apply( null, promises ).then( function() {
 					options.success();
 				} );
-
-				//options.url = Transfers.api_base + 'group/' + Transfers.application.condition();
-				//options.data = Transfers.application.queryData();
-
-				//return $.ajax( options );
 			}
 		}
 	);
