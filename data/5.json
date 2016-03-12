@@ -5,11 +5,13 @@
 			{
 				"meta": [],
 				"url": "",
-				"images": {},
+				"images": {
+					"header": "https://placekitten.com/667/502"
+				},
 				"image_count": 5,
 				"condition": "new",
-				"description": "Bacon ipsum dolor amet biltong pancetta spare ribs fatback, tongue cupim kielbasa boudin strip steak drumstick ribeye short ribs ground round tenderloin. Tongue rump kielbasa pancetta prosciutto drumstick turkey pork hamburger beef ribs.",
-				"name": "Highlander",
+				"description": "Meatball tail cow shankle landjaeger venison. Hamburger beef ribs ball tip, doner shankle flank leberkas tri-tip pork cupim kielbasa. Ball tip picanha ham, chuck shoulder strip steak rump porchetta biltong pork chop pork meatloaf bresaola.",
+				"name": "Outback",
 				"type": "Travel Trailer",
 				"model": "12345ABY",
 				"year": 2016,
@@ -19,11 +21,13 @@
 			{
 				"meta": [],
 				"url": "",
-				"images": {},
+				"images": {
+					"header": "https://placekitten.com/667/504"
+				},
 				"image_count": 5,
 				"condition": "new",
-				"description": "Bacon ipsum dolor amet biltong pancetta spare ribs fatback, tongue cupim kielbasa boudin strip steak drumstick ribeye short ribs ground round tenderloin. Tongue rump kielbasa pancetta prosciutto drumstick turkey pork hamburger beef ribs.",
-				"name": "Highlander",
+				"description": "Shoulder prosciutto venison sirloin shankle ham hock ball tip, hamburger jerky bresaola meatball meatloaf corned beef turkey. Pork belly cupim frankfurter, t-bone bacon picanha beef shank leberkas.",
+				"name": "Outback",
 				"type": "Travel Trailer",
 				"model": "12345ABY",
 				"year": 2016,
@@ -33,11 +37,13 @@
 			{
 				"meta": [],
 				"url": "",
-				"images": {},
+				"images": {
+					"header": "https://placekitten.com/667/503"
+				},
 				"image_count": 5,
 				"condition": "new",
-				"description": "Bacon ipsum dolor amet biltong pancetta spare ribs fatback, tongue cupim kielbasa boudin strip steak drumstick ribeye short ribs ground round tenderloin. Tongue rump kielbasa pancetta prosciutto drumstick turkey pork hamburger beef ribs.",
-				"name": "Highlander",
+				"description": "Short ribs ribeye turkey, ball tip salami fatback chicken andouille doner pastrami bacon tri-tip tail capicola short loin. Ham pig pork pancetta, tri-tip tongue cow beef brisket meatball shoulder bacon spare ribs doner shankle.",
+				"name": "Road Warrior",
 				"type": "Travel Trailer",
 				"model": "12345ABY",
 				"year": 2016,
@@ -47,25 +53,13 @@
 			{
 				"meta": [],
 				"url": "",
-				"images": {},
+				"images": {
+					"header": "https://placekitten.com/667/505"
+				},
 				"image_count": 5,
 				"condition": "new",
-				"description": "Bacon ipsum dolor amet biltong pancetta spare ribs fatback, tongue cupim kielbasa boudin strip steak drumstick ribeye short ribs ground round tenderloin. Tongue rump kielbasa pancetta prosciutto drumstick turkey pork hamburger beef ribs.",
-				"name": "Highlander",
-				"type": "Travel Trailer",
-				"model": "12345ABY",
-				"year": 2016,
-				"msrp": 22950.00,
-				"customer_price": 2300.00
-			},
-			{
-				"meta": [],
-				"url": "",
-				"images": {},
-				"image_count": 5,
-				"condition": "new",
-				"description": "Bacon ipsum dolor amet biltong pancetta spare ribs fatback, tongue cupim kielbasa boudin strip steak drumstick ribeye short ribs ground round tenderloin. Tongue rump kielbasa pancetta prosciutto drumstick turkey pork hamburger beef ribs.",
-				"name": "Highlander",
+				"description": "Meatloaf ball tip bresaola jerky. Kielbasa pig beef pork chop meatloaf spare ribs ribeye. Strip steak cow tenderloin, fatback ground round picanha kevin tongue ham.",
+				"name": "Springdale",
 				"type": "Travel Trailer",
 				"model": "12345ABY",
 				"year": 2016,
