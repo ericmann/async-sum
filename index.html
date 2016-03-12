@@ -36,7 +36,7 @@
     <script type="text/template" id="tmpl-card">
         <div class="card">
             <div class="card-image">
-                <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
+                <img src="<% if ( images.header ) {%><%= images.header %><% } else {%>https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png<% } %>" alt="">
             </div>
             <div class="card-header">
                 <%= name %>
