@@ -93,33 +93,46 @@
 					Transfers.api_base + '/data/9.json'
 				];
 
-				//options = options || {};
-				//options.type = 'get';
-				//options.dataType = 'json';
-				//options.contentType = 'application/json; charset=utf-8';
+				/**
+				 * Fetch a remote URL with a random timeout (to simulate network latency)
+				 *
+				 * @param {String} url
+				 *
+				 * @returns {$.promise}
+				 */
+				function fetcher( url ) {
+					var d = $.Deferred();
 
-				var promises = [];
-				_.each( sources, function( url ) {
 					var options = {
-						type: 'get',
-						dataType: 'json',
+						type       : 'get',
+						dataType   : 'json',
 						contentType: 'application/json; charset=utf-8',
-						url: url,
-						success: function( data ) {
+						url        : url,
+						success    : function ( data ) {
 							// Add the data objects to the collection
 							if ( data.success ) {
-								_.each( data.data.items, function( dataItem ) {
+								_.each( data.data.items, function ( dataItem ) {
 									// Build out the data model
 									var listing = new window.Transfers.Listing( dataItem );
 
 									// Add a model to the collection
 									SELF.add( listing );
+									d.resolve( listing );
 								} );
 							}
 						}
 					};
 
-					promises.push( $.ajax( options ) );
+					window.setTimeout( function() {
+						$.ajax( options );
+					}, Math.round( Math.random() * 1000 ) );
+
+					return d.promise();
+				}
+
+				var promises = [];
+				_.each( sources, function( url ) {
+					promises.push( fetcher( url ) );
 				} );
 
 				return $.when.apply( null, promises ).then( function() {
