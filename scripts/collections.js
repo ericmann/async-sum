@@ -1,9 +1,9 @@
 (function( window, $, undefined ) {
 	// Ensure wrapper object is available
-	window.Transfers = window.Transfers || {};
+	window.ASYNC = window.ASYNC || {};
 
 	var _ = window._,
-		Transfers = window.Transfers,
+		ASYNC = window.ASYNC,
 		Backbone = window.Backbone,
 		document = window.document;
 
@@ -35,9 +35,9 @@
 	/**
 	 * Default collection for listings
 	 */
-	var ListingCollection = window.Transfers.ListingCollection = Backbone.Collection.extend(
+	var ListingCollection = window.ASYNC.ListingCollection = Backbone.Collection.extend(
 		{
-			model: Transfers.Listing,
+			model: ASYNC.Listing,
 
 			/**
 			 * Parse out the JSON object return so we can keep track of the page number.
@@ -82,15 +82,15 @@
 				}
 
 				var sources = [
-					Transfers.api_base + '/data/1.json',
-					Transfers.api_base + '/data/2.json',
-					Transfers.api_base + '/data/3.json',
-					Transfers.api_base + '/data/4.json',
-					Transfers.api_base + '/data/5.json',
-					Transfers.api_base + '/data/6.json',
-					Transfers.api_base + '/data/7.json',
-					Transfers.api_base + '/data/8.json',
-					Transfers.api_base + '/data/9.json'
+					ASYNC.api_base + '/data/1.json',
+					ASYNC.api_base + '/data/2.json',
+					ASYNC.api_base + '/data/3.json',
+					ASYNC.api_base + '/data/4.json',
+					ASYNC.api_base + '/data/5.json',
+					ASYNC.api_base + '/data/6.json',
+					ASYNC.api_base + '/data/7.json',
+					ASYNC.api_base + '/data/8.json',
+					ASYNC.api_base + '/data/9.json'
 				];
 
 				/**
@@ -113,7 +113,7 @@
 							if ( data.success ) {
 								_.each( data.data.items, function ( dataItem ) {
 									// Build out the data model
-									var listing = new window.Transfers.Listing( dataItem );
+									var listing = new window.ASYNC.Listing( dataItem );
 
 									// Add a model to the collection
 									SELF.add( listing );

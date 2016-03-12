@@ -1,16 +1,16 @@
 (function( window, $, undefined ) {
 	// Ensure wrapper object is available
-	window.Transfers = window.Transfers || {};
+	window.ASYNC = window.ASYNC || {};
 
 	var _ = window._,
-		Transfers = window.Transfers,
+		ASYNC = window.ASYNC,
 		Backbone = window.Backbone,
 		document = window.document;
 
 	/**
 	 * Model that represents a single listing
 	 */
-	var Listing = window.Transfers.Listing = Backbone.Model.extend(
+	var Listing = window.ASYNC.Listing = Backbone.Model.extend(
 		{
 			defaults: function() {
 				return {

@@ -20,4 +20,4 @@ $ sass stylesheets/sass:stylesheets
 
 This will install Bourbon and generate the necessary CSS and CSS maps to run the site. Then merely load `index.html` in a browser and enjoy!
 
-*Note:* If you're using PHPStorm, WebStorm, or similar, right-click on `index.html` and select `View in Browser` to ensure scripts function properly. This will launch a temporary webserver so you're not using the `file:///` protocol. Some browsers disable AJAX functionality under that protocol.
+**Note:** If you're using PHPStorm, WebStorm, or similar, right-click on `index.html` and select `View in Browser` to ensure scripts function properly. This will launch a temporary webserver so you're not using the `file:///` protocol. Some browsers disable AJAX functionality under that protocol.

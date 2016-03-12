@@ -6,18 +6,18 @@ jQuery( "#spinner" ).progressbar(
 );
 
 // Set up "localized" data
-window.Transfers = window.Transfers || {};
-window.Transfers.api_base = window.location.href.replace( '/index.html', '' );
+window.ASYNC = window.ASYNC || {};
+window.ASYNC.api_base = window.location.href.replace( '/index.html', '' );
 
 // Fetch collection
-var listings = new window.Transfers.ListingCollection();
+var listings = new window.ASYNC.ListingCollection();
 listings.fetch().done( function() {
 	// Once we've fetched everything, iterate through our collection and render out the associated models
-	var container = $( document.getElementById( 'listing_container' ) ),
-		spinner = $( document.getElementById( 'spinner' ) );
+	var container = jQuery( document.getElementById( 'listing_container' ) ),
+		spinner = jQuery( document.getElementById( 'spinner' ) );
 
 	_.each( listings.models, function( item ) {
-		container.append( new window.Transfers.ListingView( { model: item } ).render().$el );
+		container.append( new window.ASYNC.ListingView( { model: item } ).render().$el );
 	} );
 
 	spinner.hide();

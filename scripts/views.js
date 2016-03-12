@@ -1,16 +1,16 @@
 (function( window, $, undefined ) {
 	// Ensure wrapper object is available
-	window.Transfers = window.Transfers || {};
+	window.ASYNC = window.ASYNC || {};
 
 	var _ = window._,
-		Transfers = window.Transfers,
+		ASYNC = window.ASYNC,
 		Backbone = window.Backbone,
 		document = window.document;
 
 	/**
 	 * Model that represents a single listing
 	 */
-	var ListingView = window.Transfers.ListingView = Backbone.View.extend(
+	var ListingView = window.ASYNC.ListingView = Backbone.View.extend(
 		{
 			tagName: 'div',
 			className: 'card',
