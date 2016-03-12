@@ -93,6 +93,9 @@
 					ASYNC.api_base + '/data/9.json'
 				];
 
+				// As we fetch items, automatically render them into this container
+				var container = jQuery( document.getElementById( 'listing_container' ) );
+
 				/**
 				 * Fetch a remote URL with a random timeout (to simulate network latency)
 				 *
@@ -117,6 +120,7 @@
 
 									// Add a model to the collection
 									SELF.add( listing );
+									container.append( new window.ASYNC.ListingView( { model: listing } ).render().$el );
 									d.resolve( listing );
 								} );
 							}
@@ -125,7 +129,7 @@
 
 					window.setTimeout( function() {
 						$.ajax( options );
-					}, Math.round( Math.random() * 1000 ) );
+					}, Math.round( Math.random() * 3000 ) );
 
 					return d.promise();
 				}
