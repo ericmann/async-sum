@@ -129,7 +129,7 @@
 
 					window.setTimeout( function() {
 						$.ajax( options );
-					}, Math.round( Math.random() * 3000 ) );
+					}, Math.round( Math.random() * 5000 ) );
 
 					return d.promise();
 				}
